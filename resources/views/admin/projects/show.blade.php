@@ -10,6 +10,9 @@
                 <img src="{{ asset('storage/'.$project->image) }}">
             </div>
             <div class="col-12">
+                {{ $project->type->name }}
+            </div>
+            <div class="col-12">
                 <p>
                     {{ $project->content }}
                 </p>

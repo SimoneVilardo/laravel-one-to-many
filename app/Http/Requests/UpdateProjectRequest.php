@@ -25,7 +25,8 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'title' => 'required|max:50',
-            'image' => 'image|max:250'
+            'image' => 'image|max:250',
+            'type_id' => 'required|exists:types,id'
         ];
     }
 
@@ -35,7 +36,10 @@ class UpdateProjectRequest extends FormRequest
             'title.max'      =>'Il titolo deve essere lungo al massimo :max caratteri.',
 
             'image.image'   => 'Il file inviato deve avere una delle seguenti estensioni: .jpg .jpeg .png .webp',
-            'image.max'     =>'l\' indirizzo dell\' immagine deve avere :max caratteri'
+            'image.max'     =>'l\' indirizzo dell\' immagine deve avere :max caratteri',
+
+            'type_id.required'  => 'Devi selezionare una tipologia',
+            'type_id.exists' => 'Tipologia selezionata non valida'
         ];
     }
 }
